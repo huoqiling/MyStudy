@@ -1,4 +1,4 @@
-package com.example.zyfx_.mystudy;
+package com.example.zyfx_.mystudy.view.activity;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,19 +10,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.app.NotificationCompat;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.daimajia.numberprogressbar.NumberProgressBar;
+import com.example.zyfx_.mystudy.R;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.callback.DownloadProgressCallBack;
 import com.zhouyou.http.exception.ApiException;
 
 import java.io.File;
-import java.text.DecimalFormat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

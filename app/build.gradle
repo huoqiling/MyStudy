@@ -55,4 +55,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
     compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+    compile 'com.jaeger.statusbarutil:library:1.4.0'
+    compile 'com.sunfusheng:glideimageview:1.0.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.gyf.barlibrary:barlibrary:2.2.6'
+    compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
 }
