@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.example.zyfx_.mystudy.view.view.CustomTitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="AutoFlowLayout" />
+
+    <com.example.library.AutoFlowLayout
+        android:id="@+id/afLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnNumbers="3"
+        app:cutLine="true"
+        app:cutLineColor="@color/colorAccent"
+        app:cutLineWidth="1dp"
+        app:horizontalSpace="10dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+</LinearLayout>

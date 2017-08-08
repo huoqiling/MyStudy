@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/common_layout"
+    android:orientation="horizontal"
+    tools:ignore="all">
+
+
+    <ImageView
+        android:id="@+id/btnLeftImg"
+        style="@style/common_image_left"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/btnLeftText"
+        style="@style/common_text_left"
+        android:visibility="gone"
+        tools:text="leftText" />
+
+    <com.example.zyfx_.mystudy.view.view.CustomRadioButton
+        android:id="@+id/tvTitle"
+        style="@style/common_title_text"
+        android:drawablePadding="5dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        tools:text="Title" />
+
+    <ImageView
+        android:id="@+id/btnRightImg"
+        style="@style/common_image_right"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/btnRightText"
+        style="@style/common_text_right"
+        android:visibility="gone"
+        tools:text="rightTitle" />
+
+</RelativeLayout>

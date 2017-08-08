@@ -1,16 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@mipmap/bg_monkey"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="all">
 
     <me.zhanghai.android.materialratingbar.MaterialRatingBar
         style="@style/Widget.MaterialRatingBar.RatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="15dp"
-        android:rating="3"/>
+        android:layout_marginTop="20dp"
+        android:rating="3" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/btnAirShip"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:text="飞船"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/btnAutoFlowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="BootstrapButton"
+        android:textColor="@color/white"
+        app:badgeText="2"
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="sm"
+        app:buttonMode="regular"
+        app:roundedCorners="true"
+        app:showOutline="false" />
+
+    <Button
+        android:id="@+id/btnEasyPopup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:text="EasyPopup"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnRecyclerGird"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffba13"
+        android:text="Recycler实现gridView"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 </LinearLayout>
