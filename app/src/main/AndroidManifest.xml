@@ -62,6 +62,11 @@
             android:name=".view.activity.RecyclerGridActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".view.activity.RxBindingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>

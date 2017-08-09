@@ -1,21 +1,23 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.example.zyfx_.mystudy"
-        minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled true
     }
 
     dexOptions {
         preDexLibraries true
         javaMaxHeapSize "2048M"//越大越好
         incremental true
+        jumboMode = true
     }
 
     lintOptions {
@@ -46,22 +48,31 @@ android {
         targetCompatibility 1.7
     }
 
-    configurations.all {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-            def requested = details.requested
-            if (requested.group == 'com.android.support') {
-                if (!requested.name.startsWith("multidex")) {
-                    details.useVersion '25.3.1'
-                }
+    afterEvaluate {
+        tasks.matching {
+            it.name.startsWith('dex')
+        }.each { dx ->
+            if (dx.additionalParameters == null) {
+                dx.additionalParameters = ['--multi-dex']
+            } else {
+                dx.additionalParameters += '--multi-dex'
             }
         }
     }
+
+
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile rootProject.ext.dependencies["support-annotations"]
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["support-v4"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["cardview-v7"]
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+    compile rootProject.ext.dependencies["multidex"]
     compile 'com.zhouyou:rxeasyhttp:1.0.6'
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
@@ -76,5 +87,4 @@ dependencies {
     compile 'com.github.zyyoona7:EasyPopup:1.0.1'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
     compile 'com.github.LRH1993:AutoFlowLayout:1.0.5'
-
 }

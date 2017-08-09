@@ -1,6 +1,8 @@
 package com.example.zyfx_.mystudy;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.beardedhen.androidbootstrap.TypefaceProvider;
 import com.zhouyou.http.EasyHttp;
@@ -34,6 +36,13 @@ public class MyApplication extends Application {
             instance = new MyApplication();
         }
         return instance;
+    }
+
+    //由于65K限制，采用分包（Dex）
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
 }
