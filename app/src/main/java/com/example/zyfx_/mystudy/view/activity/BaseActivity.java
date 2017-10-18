@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.zyfx_.mystudy.R;
 import com.gyf.barlibrary.ImmersionBar;
 import com.jaeger.library.StatusBarUtil;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by zyfx_ on 2017/6/21.
@@ -34,8 +35,17 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
 
     @Override
     protected void onDestroy() {

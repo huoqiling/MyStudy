@@ -31,8 +31,9 @@ public class StudyActivity extends BaseActivity {
     }
 
 
+
     @OnClick({R.id.btnLogin, R.id.btnAirShip, R.id.btnAutoFlowLayout, R.id.btnEasyPopup, R.id.btnRecyclerGird
-            , R.id.btnRxBinding})
+            , R.id.btnRxBinding,R.id.btnSignature})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btnLogin:
@@ -52,6 +53,9 @@ public class StudyActivity extends BaseActivity {
                 break;
             case R.id.btnRxBinding:
                 start(RxBindingActivity.class);
+                break;
+            case R.id.btnSignature:
+                start(SignatureActivity.class);
                 break;
         }
 

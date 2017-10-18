@@ -8,11 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
-
-    <!--Error:Execution failed for task ':app:processDebugManifest'.-->
-    <!--&gt; Manifest merger failed : Attribute meta-data#android.support.VERSION@value value=(25.3.1) from [com.android.support:design:25.3.1] AndroidManifest.xml:27:9-31-->
-    <!--is also present at [com.android.support:appcompat-v7:26.0.0-alpha1] AndroidManifest.xml:27:9-38 value=(26.0.0-alpha1).-->
-    <!--Suggestion: add 'tools:replace="android:value"' to <meta-data> element at AndroidManifest.xml:25:5-27:34 to override.-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".MyApplication"
@@ -22,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup">
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="598c17548f4a9d1e4a000297" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
 
         <activity
             android:name=".view.activity.SplashActivity"
@@ -47,24 +49,27 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
-        <!--自定义ViewGroup,实现多功能流式布局与网格布局-->
+        <!-- 自定义ViewGroup,实现多功能流式布局与网格布局 -->
         <activity
             android:name=".view.activity.AutoFlowLayoutActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".view.activity.EasyPopupActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".view.activity.RecyclerGridActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".view.activity.RxBindingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!--手写-->
+        <activity
+            android:name=".view.activity.SignatureActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>

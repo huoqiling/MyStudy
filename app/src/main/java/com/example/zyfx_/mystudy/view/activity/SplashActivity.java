@@ -3,10 +3,12 @@ package com.example.zyfx_.mystudy.view.activity;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.zyfx_.mystudy.BuildConfig;
 import com.example.zyfx_.mystudy.R;
 import com.gyf.barlibrary.ImmersionBar;
 import com.jaeger.library.StatusBarUtil;
 import com.sunfusheng.glideimageview.GlideImageView;
+import com.umeng.analytics.MobclickAgent;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +33,10 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void init(){
+        MobclickAgent.setCatchUncaughtExceptions(true);
+        MobclickAgent.setDebugMode(true);
+        MobclickAgent.openActivityDurationTrack(true);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
